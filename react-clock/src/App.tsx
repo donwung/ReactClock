@@ -107,9 +107,9 @@ function App() {
                 <input value={alarm.hours} type="number" placeholder="hours" onChange={(e: any) => { handleOnChangeAlarm({ hours: e.target.value * 1 }) }}></input>
                 <input value={alarm.minutes} type="number" placeholder="minutes" onChange={(e: any) => { handleOnChangeAlarm({ minutes: e.target.value * 1 }) }}></input>
                 <input type="number" placeholder="seconds" onChange={(e: any) => { handleOnChangeAlarm({ seconds: e.target.value * 1 }) }}></input>
-                <select value={alarm.AM} onChange={(e: any) => { handleOnChangeAlarmAMPM(e.target.value) }}>
-                    <option value="true">AM</option>
-                    <option value="false">PM</option>
+                <select value={alarm.AM? "AM": "PM"} onChange={(e: any) => { handleOnChangeAlarmAMPM(e.target.value) }}>
+                    <option>AM</option>
+                    <option>PM</option>
                 </select>
                 <button type="submit">Set Alarm</button>
             </form>
